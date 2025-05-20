@@ -4,19 +4,11 @@ title: Project Proposal
 
 # Project Proposal and Bill of Materials
 
-## Description (2 points)
-A description of the product you intend to prototype.
-
-## Design
----
-title: Project Proposal
----
-
-# Project Proposal and Bill of Materials
-
 ## 1. Description (2 points)
 
-We are designing a **servo-controlled electronics workbench assistant** that functions like a modern version of a "helping hands" tool used in electronics labs. Our system uses a pan-tilt servo mount to precisely position an articulated arm over a workspace. The arm can be controlled manually with analog sticks (using ADC), or automatically through programmable signals. It can hold wires, probes, or even deliver test signals to a breadboard. The system is intended to make circuit debugging and prototyping easier and more efficient by acting as a second pair of hands or a signal delivery tool.
+We are building a **servo-controlled electronics workbench assistant**, designed to act as a versatile tool for prototyping and debugging. This robotic arm system uses a pan-tilt servo mechanism mounted on a stable base and can be manipulated using analog joysticks. It is capable of gripping or pointing at small components, simulating the functionality of a "helping hands" tool commonly used in electronics labs.
+
+We are using the **TI CC3200 LaunchPad** as our main microcontroller. It handles PWM for servo control, ADC for reading joystick input, and will also connect to the **OpenAI GPT API over Wi-Fi**. An integrated OLED display will show mode information, arm status, and responses to questions. The GPT integration allows users to ask predefined or parameterized questions (e.g., “How do I reset the arm?” or “What does this button do?”) and receive helpful on-device answers.
 
 ---
 
@@ -24,71 +16,65 @@ We are designing a **servo-controlled electronics workbench assistant** that fun
 
 ### Functional Specification (2 points)
 
-The device has two main modes:
+The device will support three modes:
 
-- **Manual Mode**: The user can control the position of the arm via two analog joysticks, adjusting the pan and tilt angle via PWM signals to the servo motors.
-- **Automated Mode**: Predefined signal tasks (e.g., delivering a square wave, probing a certain part of the circuit) can be activated through switch inputs.
+- **Manual Mode**: The user controls the servo arm’s pan and tilt via analog joysticks. ADC on the CC3200 interprets the input, and PWM signals control the servos.
+- **Information Mode**: The user can trigger predefined GPT queries from physical buttons or a menu system, and responses are shown on the OLED screen.
+- **Auto Mode (optional)**: The device performs preset behaviors, like centering itself or positioning at common angles.
 
-A state machine will manage the system states:
+A simple state machine governs transitions:
 
 ```
-Idle --> Manual Control <--> Automated Task
+Idle --> Manual Control <--> Info Query Mode
         ↑             ↓
      Calibration <-- Error State
 ```
-
-Each state handles specific behaviors for input, motor control, or signal output. The user can toggle between modes using buttons or DIP switches.
 
 ### System Architecture (2 points)
 
 ```
 [Analog Joysticks]
        |
-   [ADC - MSP430]
+   [ADC - CC3200]
        |
-   [State Machine Control Logic]
+   [Control Logic + State Machine]
        |
-  -----------------------------
-  |                           |
-[PWM → Servo Motors]     [Signal Output System (DAC or GPIO toggling)]
-                           |
-                [Optional Probe/Delivery Interface]
+  ---------------------------------------------
+  |                       |                   |
+[PWM → Servo Motors]   [Wi-Fi → GPT API]   [OLED Display]
+                            |
+                  [Prefilled Query Selection]
 ```
 
-- **ADC** is used to read analog joystick positions.
-- **PWM** outputs control the servo motors.
-- A microcontroller (e.g., MSP430) runs the state machine and translates input into motion or output signals.
-- Optional probing features could use GPIOs or DACs to generate or monitor signals.
+- **ADC** reads joystick input.
+- **PWM** drives pan/tilt servo motors.
+- **Wi-Fi** is used to connect the CC3200 to the GPT API for sending queries and receiving answers.
+- The **OLED display** shows GPT responses and system status.
 
 ---
 
 ## 3. Implementation Goals (2 points)
 
-- **Minimal Goal**: Two-axis servo control using joystick input, stable arm control with basic "pan and tilt" functionality.
-- **Target Goal**: Add automated signal delivery (e.g., square wave generator), toggle between manual and auto modes.
-- **Stretch Goal**: Enable probing (e.g., using voltage sensing) and display live signal data on a simple screen or LEDs, or log via UART.
+- **Minimal Goal**: Servo control with analog joystick input and OLED display showing position/mode.
+- **Target Goal**: GPT integration with a few selectable prefilled questions and response output to the OLED.
+- **Stretch Goal**: Add gripping mechanism or signal probe, enable contextual GPT queries (e.g., current servo position), or save response history.
 
 ---
 
 ## 4. Bill of Materials (2 points)
 
-| Component                 | Qty | Approx. Cost | Source               |
-|--------------------------|-----|--------------|----------------------|
-| Pan-Tilt Servo Kit       | 1   | $10          | Already owned        |
-| Analog Joysticks         | 2   | $4           | Amazon               |
-| MSP430 or Microcontroller| 1   | $0 (provided)| Lab Kit              |
-| Wires & Prototyping Tools| —   | $5           | Lab / Personal Stock |
-| Breadboard               | 1   | $5           | Already owned        |
-| Optional: Signal Probe   | 1   | $10          | Digikey / Amazon     |
-| Optional: LEDs or OLED   | 1   | $5–10        | Amazon               |
+| Component                   | Qty | Approx. Cost | Source                 |
+|----------------------------|-----|--------------|------------------------|
+| TI CC3200 LaunchPad        | 1   | $0           | Provided in lab        |
+| Pan-Tilt Servo Kit         | 1   | $10          | Already owned          |
+| Analog Joysticks           | 2   | $4           | Amazon                 |
+| OLED Display (I2C)         | 1   | $8           | Amazon                 |
+| Wires & Prototyping Tools  | —   | $5           | Lab / Personal Stock   |
+| Breadboard                 | 1   | $5           | Already owned          |
+| GPT API Key (OpenAI)       | —   | Free–$5      | OpenAI                 |
 
-**Estimated Total Cost:** ~$30 (within $50 budget)
+**Estimated Total Cost:** ~$32–$35 (within $50 budget)
 
 ---
 
-The proposal is 1 page long (excluding this BOM), and all implementation goals, block diagrams, and ideas are subject to refinement as development continues.
-
-
-
-
-
+This project blends hardware control with intelligent interaction, creating a tool that is both functional and informative. It enhances the typical “helping hands” setup with joystick control, servo precision, and GPT-powered assistance — making it ideal for students and hobbyists working with electronics.
