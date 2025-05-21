@@ -1,14 +1,13 @@
 ---
-title: Project Proposal
+title: TI-OS
 ---
 
 # Project Proposal and Bill of Materials
 
 ## 1. Description (2 points)
+Overview: TI-OS is a multi-functional program and physical interface that is meant to deliver a rudimentary simulation of what a personal computer based on the CC3200 would look like. A top level "desktop" menu will allow the user to select between several applications that demonstrate the different functionalities of the microcontroller. These applications will be focused on the use of TI-OS as an electronics assistant, such as an oscilliscope, function generator, and servo controlled "helping hand" for soldering. However, there will also be some demos of the real time graphical capabilities of the system, with a platformer video game and wireframe 3D physics simulation. The IoT implementation of the device will be an application that helps the user identify the pinout, function, and purpose of any named electronic component through the use of interfacing with the OpenAI GPT 3.5 Turbo API. 
 
-We are building a **servo-controlled electronics workbench assistant**, designed to act as a versatile tool for prototyping and debugging. This robotic arm system uses a pan-tilt servo mechanism mounted on a stable base and can be manipulated using analog joysticks. It is capable of gripping or pointing at small components, simulating the functionality of a "helping hands" tool commonly used in electronics labs.
-
-We are using the **TI CC3200 LaunchPad** as our main microcontroller. It handles PWM for servo control, ADC for reading joystick input, and will also connect to the **OpenAI GPT API over Wi-Fi**. An integrated OLED display will show mode information, arm status, and responses to questions. The GPT integration allows users to ask predefined or parameterized questions (e.g., “How do I reset the arm?” or “What does this button do?”) and receive helpful on-device answers.
+Physical Interface: The user will interact with TI-OS via an analog stick to control a cursor, and two buttons to select and exit programs. In terms of output, the CC3200 will drive an OLED screen to display the graphical interface, and use a buzzer to provide basic sound feedback to the user. The "helping hand" will be articulated by two servo motors and controlled using the analog stick.
 
 ---
 
@@ -66,7 +65,7 @@ Idle --> Manual Control <--> Info Query Mode
 | Component                   | Qty | Approx. Cost | Source                 |
 |----------------------------|-----|--------------|------------------------|
 | TI CC3200 LaunchPad        | 1   | $0           | Provided in lab        |
-| Pan-Tilt Servo Kit         | 1   | $10          | Already owned          |
+| Pan-Tilt Servo Kit         | 1   | $13          | Alibaba (already owned)|
 | Analog Joysticks           | 2   | $4           | Amazon                 |
 | OLED Display (I2C)         | 1   | $8           | Amazon                 |
 | Wires & Prototyping Tools  | —   | $5           | Lab / Personal Stock   |
