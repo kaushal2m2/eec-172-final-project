@@ -30,8 +30,9 @@ Idle --> Manual Control <--> Info Query Mode
 
 <img src="circuit.png" alt="Flowchart" width="800" height="650">
 
-- **ADC** reads joystick input.
-- **PWM** drives pan/tilt servo motors and buzzer.
+- **I2C PINS** reads BMA222 Accelerometer for interaction with 3D cube simulation and platformer video game.
+- **ADC PINS** reads joystick input and oscilloscope input pin.
+- **PWM PINS** drives pan/tilt servo motors and buzzer.
 - **Wi-Fi** is used to connect the CC3200 to the GPT API for sending queries and receiving answers.
 - **OLED display** shows user interface and system status.
 
