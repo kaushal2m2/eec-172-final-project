@@ -30,7 +30,7 @@ Idle --> Manual Control <--> Info Query Mode
 ```
 
 ### System Architecture (2 points)
-<img src="flowchart.png" alt="Flowchart" width="800" height="350">
+<img src="flowchart.png" alt="Flowchart" width="800" height="650">
 ```
 [Analog Joysticks]
        |
