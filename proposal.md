@@ -27,24 +27,13 @@ Idle --> Manual Control <--> Info Query Mode
 
 ### System Architecture (2 points)
 <img src="flowchart.png" alt="Flowchart" width="800" height="650">
-```
-[Analog Joysticks]
-       |
-   [ADC - CC3200]
-       |
-   [Control Logic + State Machine]
-       |
-  ---------------------------------------------
-  |                       |                   |
-[PWM → Servo Motors]   [Wi-Fi → GPT API]   [OLED Display]
-                            |
-                  [Prefilled Query Selection]
-```
+
+<img src="circuit.png" alt="Flowchart" width="800" height="650">
 
 - **ADC** reads joystick input.
-- **PWM** drives pan/tilt servo motors.
+- **PWM** drives pan/tilt servo motors and buzzer.
 - **Wi-Fi** is used to connect the CC3200 to the GPT API for sending queries and receiving answers.
-- The **OLED display** shows GPT responses and system status.
+- **OLED display** shows user interface and system status.
 
 ---
 
