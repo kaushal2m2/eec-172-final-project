@@ -9,23 +9,20 @@ Physical Interface: The user will interact with TI-OS via an analog stick to con
 
 ## 2. Design
 
-### Functional Specification (2 points)
+### Functional Specification:
 
-The device will support three modes:
+The top level operating system will have 7 states:
+- **Desktop Option Select Screen**: A cursor is controlled by the user with the joystick, and clicking on icons with the select button enters their respective application. This is the main high level program, and every application runs by rendering single frames via function calls within this main loop. This allows the user to exit to the desktop by pressing the back button and select a different application.
+- **Function Generator**: Probe connected to a PWM modulation channel creates periodic signals for driving electronics. User can use the OLED screen, joystick, and select button to select frequency, waveform, and amplitude.
+- **Videogame**: Simple 2D platformer that takes joystick input to control a character, and the select button to jump. Bitmap information is used to define map collisions.
+- **Oscilliscope**: A scrolling graphical representation of the voltage measured by an ADC channel. The user can use the joystick to change the x and y scale.
+- **Wireframe Physics Simulator**: The BMA222 Accelerometer is used as input for a 3-D physics simulation of a wireframe cube in a box. The cubes physical movement will reflect how the CC3200 is tilted by the user.
+- **Servo Control**: The user controls the servo arm’s pan and tilt via analog joysticks. ADC on the CC3200 interprets the input, and PWM signals control the servos.
+- **Component Descriptor**: The user can trigger predefined GPT queries from physical buttons or a menu system, and responses are shown on the OLED screen.
 
-- **Manual Mode**: The user controls the servo arm’s pan and tilt via analog joysticks. ADC on the CC3200 interprets the input, and PWM signals control the servos.
-- **Information Mode**: The user can trigger predefined GPT queries from physical buttons or a menu system, and responses are shown on the OLED screen.
-- **Auto Mode (optional)**: The device performs preset behaviors, like centering itself or positioning at common angles.
 
-A simple state machine governs transitions:
 
-```
-Idle --> Manual Control <--> Info Query Mode
-        ↑             ↓
-     Calibration <-- Error State
-```
-
-### System Architecture (2 points)
+### System Architecture:
 <img src="flowchart.png" alt="Flowchart" width="800" height="650">
 
 <img src="circuit.png" alt="Flowchart" width="800" height="650">
