@@ -59,6 +59,6 @@ These are the main connections made to the CC3200 Launchpadm, visualized in the 
 
 ---
 <img src="flowchart.png" alt="Flowchart" width="800" height="650">
-<center>*fig.1:Component Descriptor State Diagram *</center>
+<div style="text-align: center">*fig.1:Component Descriptor State Diagram *</div>
 <img src="circuit.png" alt="Flowchart" width="800" height="650">
 <center>*fig.2:CC3200 Connections Overview Diagram*</center>
