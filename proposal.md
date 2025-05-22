@@ -31,7 +31,7 @@ These are the main connections made to the CC3200 Launchpad, visualized in the C
 
 ---
 
-## 4. Bill of Materials (2 points)
+## 4. Bill of Materials
 
 | Component                   | Qty | Approx. Cost | Source                 |
 |----------------------------|-----|--------------|------------------------|
