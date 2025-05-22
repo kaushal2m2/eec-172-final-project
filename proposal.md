@@ -59,6 +59,9 @@ These are the main connections made to the CC3200 Launchpad, visualized in the C
 
 ---
 <img src="flowchart.png" alt="Flowchart" width="800" height="650">
-fig.1:Component Descriptor State Diagram
+
+**fig.1:Component Descriptor State Diagram**
+
 <img src="circuit.png" alt="Flowchart" width="800" height="650">
-fig.2:CC3200 Connections Overview Diagram
+
+**fig.2:CC3200 Connections Overview Diagram**
