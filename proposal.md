@@ -37,7 +37,7 @@ These are the main connections made to the CC3200 Launchpad, visualized in the C
 |----------------------------|-----|--------------|------------------------|
 | TI CC3200 LaunchPad        | 1   | $0           | Provided in lab        |
 | Pan-Tilt Servo Kit         | 1   | $13          | Alibaba (already owned)|
-| Analog Joysticks           | 2   | $4           | Alibaba (already owned)|
+| Analog Joystick            | 1   | $4           | Alibaba (already owned)|
 | Buzzer                     | 2   | $2           | Alibaba (already owned)|
 | OLED Display (SPI)         | 1   | $0           | Provided in lab        |
 | Buttons                    | 1   | $1           | Alibaba (already owned)|
