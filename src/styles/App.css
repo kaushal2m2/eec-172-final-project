@@ -1,0 +1,83 @@
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  /* height: 100%; */
+  overflow-y: auto;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #e5ddc8;
+  font-family: sans-serif;
+}
+
+.app-title {
+  text-align: center;
+  font-size: 3rem;
+  margin: 1rem 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0.75rem;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+.navbar a.active {
+  border-bottom: 2px solid #333;
+}
+
+.content, .layout {
+  display: flex;
+  flex: 1;
+}
+
+.sidebar {
+  width: 200px;
+  background: #fff;
+  flex-shrink: 0;
+}
+.sidebar img {
+  width: 100%;
+  display: block;
+}
+
+.main {
+  flex: 1;
+  padding: 1rem;
+}
+
+.home-hero {
+  position: relative;
+  width: 100%;
+}
+
+.home-hero__img {
+  display: block;    /* remove inline‐space */
+  width: 100%;       /* always fill the container’s width */
+  height: auto;      /* keep aspect ratio */
+}
+
+/* 4) (Optional) Overlay your title centered on it */
+.home-hero__title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0.5rem 1rem;
+  background: rgba(0,0,0,0.3);
+  color: #fff;
+  font-size: 2rem;
+  border-radius: 4px;
+}
