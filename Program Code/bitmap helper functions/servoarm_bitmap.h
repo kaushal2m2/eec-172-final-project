@@ -1,5 +1,4 @@
-// Monochrome bitmap animation data for cursor.gif
-// Size: 20x30 pixels, 3 frames
+
 #include "simplelink.h"
 #include <string.h>
 
