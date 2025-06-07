@@ -1,7 +1,7 @@
 /******************************************************************************
  * TI CC3200 Multi-Application OS
  * Main selection screen for moving between several demos
- * Based on BMA222 accelerometer and SSD1351 OLED
+ * Based on ADC joystick, GPIO buttons, and SSD1351 OLED
  *
  * Version: 1.0.0
  * Target: TI CC3200
