@@ -788,7 +788,7 @@ void renderInterface(GameState* state)
         strcmp(state->currentInterface, "Oscilliscope") == 0 ||
         strcmp(state->currentInterface, "AWS IoT") == 0 ||
         strcmp(state->currentInterface, "Function Generator") == 0) {
-        renderApplication(state, RED);
+        renderApplication(state);
     }
 
     /* Draw cursor if not hidden */
