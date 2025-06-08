@@ -62,6 +62,8 @@ The system includes a diverse range of utility and entertainment applications:
    - Connect all components according to the wiring diagram (see figure below)
    - Ensure proper power connections and ground references
    - Test individual components before full integration
+  
+<img src="cc3200 diagram.png" alt="Wiring Diagram" width="800" height="100">
 
 2. **Software Environment**
    - Install TI Code Composer Studio
