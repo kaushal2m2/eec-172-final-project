@@ -6,5 +6,4 @@ title: EEC172 Final Project
 
 ## Table of Contents
 - [Project Proposal](proposal.html)
-- [Project Page](project.html)
 
