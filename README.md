@@ -6,7 +6,7 @@ A sophisticated embedded systems project that transforms the TI CC3200 microcont
 
 ## Overview
 
-TI-OS is an embedded systems project that aims to replicate the user experience of a personal computer through the hardware of the TI CC3200. Through the management of real-time graphics, application switching, and a simplified physical interface, the "closed loop" intuitive behavior of a more complex operating system is accomplished on the limited hardware of the microcontroller. For a more comprehensive report on the structure and functionality, see TI-OSreport.pdf.
+TI-OS is an embedded systems project that aims to replicate the user experience of a personal computer through the hardware of the TI CC3200. Through the management of real-time graphics, application switching, and a simplified physical interface, the "closed loop" intuitive behavior of a more complex operating system is accomplished on the limited hardware of the microcontroller. For a more comprehensive report on the structure and functionality, see [the final report.](TI-OSreport.pdf).
 
 ## Features
 
