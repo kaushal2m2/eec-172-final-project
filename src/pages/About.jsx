@@ -1,86 +1,95 @@
 import React from 'react';
 import '../styles/About.css';
-import picture1 from '../assets/picture1.png';
-import picture2 from '../assets/picture2.png';
-import picture3 from '../assets/picture3.png';
-import logo from '../assets/logo.png';
 
 export default function About() {
   return (
     <div className="about-container">
       <div className="about-header">
         <div className="header-content">
-          <h1 className="about-title">TI-OS™ Workstation</h1>
+          <h1 className="about-title">TI-OS™ Features</h1>
           <p className="about-intro">
-            TI-OS™ Workstation is the most powerful desktop operating system 
-            for your most demanding business needs. Run high-end, 32-bit applications
-            for software development, engineering, financial analysis, scientific, 
-            and business-critical tasks along with other TI-OS™-based software, all in
-            a secure, multitasking environment.
+            TI-OS™ offers a powerful platform for embedded system development, 
+            with advanced features and capabilities designed for the Texas Instruments ecosystem.
           </p>
         </div>
       </div>
 
-      <div className="about-grid">
-        <div className="grid-item feature-left">
-          <img src={picture1} alt="Feature 1" className="feature-image" />
-          <div className="feature-caption">
-            <h4>Edit in place, and even drag and drop</h4>
-            <p>Data between 16-bit and 32-bit applications, using OLE, TI's object technology.</p>
+      <div className="card-grid">
+        {/* Card 1: Texas icon */}
+        <div className="card">
+          <div className="card-icon">
+            <img src="assets/img1.png" alt="Texas Icon" className="card-image" />
+          </div>
+          <div className="card-content">
+            <h3 className="card-title">Texas Hardware Support</h3>
+            <p className="card-text">
+              Full support for Texas Instruments hardware platforms and microcontrollers with optimized drivers.
+            </p>
           </div>
         </div>
 
-        <div className="grid-item feature-right">
-          <img src={picture2} alt="Feature 2" className="feature-image" />
-          <div className="feature-caption">
-            <h4>High-end feature support</h4>
-            <p>Makes it easier than ever to deliver workstation or mini-computer performance on the more affordable PC platform.</p>
+        {/* Card 2: Display and Input */}
+        <div className="card">
+          <div className="card-icon">
+            <img src="assets/img2.png" alt="Display Icon" className="card-image" />
+          </div>
+          <div className="card-content">
+            <h3 className="card-title">Display & Input Systems</h3>
+            <p className="card-text">
+              Configurable interface with support for various input methods and display technologies.
+            </p>
+          </div>
+          
+        </div>
+
+        {/* Card 3: Connectivity */}
+        <div className="card">
+          <div className="card-icon">
+            <img src="assets/img3.png" alt="Connectivity Icon" className="card-image" />
+          </div>
+          <div className="card-content">
+            <h3 className="card-title">Connectivity Options</h3>
+            <p className="card-text">
+              Built-in support for various communication protocols including Wi-Fi, Bluetooth, and ethernet.
+            </p>
           </div>
         </div>
 
-        <div className="grid-item specs-box">
-          <h3>System requirements:</h3>
-          <ul className="specs-list">
-            <li>x86 or Pentium-based system</li>
-            <li>Personal computer with a 386/25 processor or higher</li>
-            <li>12 MB of memory</li>
-            <li>One CD-ROM drive and a hard disk with 90 MB available</li>
-            <li>VGA or higher-resolution video display adapter</li>
-          </ul>
-          <h3>Networking options:</h3>
-          <ul className="specs-list">
-            <li>Ethernet</li>
-            <li>TCP/IP</li>
-            <li>Wi-Fi</li>
-            <li>Bluetooth</li>
-          </ul>
-        </div>
-
-        <div className="grid-item feature-large">
-          <img src={picture3} alt="Feature 3" className="feature-image-large" />
-          <div className="feature-caption-large">
-            <h4>Build custom applications right on target.</h4>
-            <p>TI-OS™ Workstation multiplexes applications efficiently in their own memory
-            areas, making it an excellent host and target for custom development. And with 
-            support for advanced features such as OLE, OpenGL graphics, multithreading, 
-            and symmetric multiprocessing, never has there been so much power readily 
-            accessible for everyday use.</p>
+        {/* Card 4: Applications */}
+        <div className="card">
+          <div className="card-icon">
+            <img src="assets/img4.png" alt="Applications Icon" className="card-image" />
+          </div>
+          <div className="card-content">
+            <h3 className="card-title">Application Framework</h3>
+            <p className="card-text">
+              Rich set of APIs and libraries for building robust applications with minimal development time.
+            </p>
           </div>
         </div>
       </div>
       
       <div className="about-footer">
-        <div className="footer-box">
-          <h3>Expand tomorrow's choices with today's flexible solutions.</h3>
-          <ul>
-            <li>Extend your current investment, training, and expertise in the operating system as you move to a more powerful computing platform.</li>
-            <li>Preemptively multitask 16-bit and 32-bit applications freely in a secure, robust environment.</li>
-            <li>Add more processors to current PCs as your needs grow, or even explore the latest RISC processors, while keeping your existing applications.</li>
-          </ul>
-        </div>
-        <div className="footer-logo">
-          <img src={logo} alt="TI-OS Logo" className="logo-image" />
-          <p className="trademark">© 2023 TI-OS Corporation. All rights reserved.</p>
+        <div className="footer-content">
+          <h3>System Requirements</h3>
+          <div className="footer-columns">
+            <div className="footer-column">
+              <h4>Hardware</h4>
+              <ul>
+                <li>TI MSP430 or ARM Cortex-M series</li>
+                <li>Minimum 32KB Flash, 8KB RAM</li>
+                <li>GPIO support for peripherals</li>
+              </ul>
+            </div>
+            <div className="footer-column">
+              <h4>Development</h4>
+              <ul>
+                <li>Code Composer Studio v10+</li>
+                <li>TI-OS SDK version 2.1 or higher</li>
+                <li>Compatible with standard JTAG debuggers</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>

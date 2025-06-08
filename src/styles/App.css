@@ -55,6 +55,7 @@ html, body, #root {
 .main {
   flex: 1;
   padding: 1rem;
+  background-color: transparent;
 }
 
 .home-hero {
@@ -64,7 +65,7 @@ html, body, #root {
 
 .home-hero__img {
   display: block;    /* remove inline‐space */
-  width: 100%;       /* always fill the container’s width */
+  width: 100%;       /* always fill the container's width */
   height: auto;      /* keep aspect ratio */
 }
 
